@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: #f1f1f1;
+        color: #111;
+      }
+      .card {
+        display: grid;
+        gap: 12px;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        min-width: 320px;
+      }
+      #token {
+        font-size: 20px;
+        text-align: center;
+      }
+      #token-form {
+        display: grid;
+        gap: 8px;
+      }
+      #token-form.hidden {
+        display: none;
+      }
+      #token-form label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #444;
+      }
+      #token-input {
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      #token-form button {
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: none;
+        background: #111;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div id="token">Loading...</div>
+      <form id="token-form" class="hidden">
+        <label for="token-input">Token</label>
+        <input id="token-input" type="text" autocomplete="off" />
+        <button type="submit">Save</button>
+      </form>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+</html>

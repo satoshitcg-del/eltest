@@ -1,0 +1,54 @@
+{
+  "name": "electron-token-app",
+  "version": "1.0.0",
+  "description": "",
+  "productName": "Electron Token App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "set-token": "node set-token.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postuninstall": "node cleanup.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.4.0"
+  },
+  "build": {
+    "appId": "com.example.electron-token-app",
+    "productName": "Electron Token App",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "include": "build/installer.nsh"
+    }
+  }
+}
